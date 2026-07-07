@@ -1,6 +1,6 @@
-# 🌍 Wanderlust – Full Stack Travel Listing Platform
+# 🌍 Wanderlust – Full Stack vacation rental platform
 
-A modern full-stack travel listing web application where users can explore destinations, create listings, upload images, and share reviews. The application features secure authentication, cloud image storage, interactive maps, and a responsive UI.
+A modern full-stack vacation rental web application where users can explore destinations, create listings, upload images, and share reviews. The application features secure authentication, cloud image storage, interactive maps, and a responsive UI.
 
 ## 🚀 Live Demo
 
