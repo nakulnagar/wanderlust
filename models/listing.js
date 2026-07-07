@@ -1,3 +1,4 @@
+const { ref } = require("joi");
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Review = require("./review.js");
@@ -34,13 +35,31 @@ const listingSchema = new Schema({
     coordinates: {
       type: [Number],
       required: true
-    },
+    }
   },
+  category: {
+    type: String,
+    enum: [
+      "Trending",
+      "Rooms",
+      "Entire Home",
+      "Pool",
+      "Beach",
+      "Mountain",
+      "Nature",
+      "City",
+      "Luxury",
+      "Family",
+      "Pet Friendly"
+    ],
+    default: "Trending"   // 🔥 IMPORTANT for old listings
+  },
+
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
   if (listing) {
-    await Review.deleteMany({_id: { $in: listing.reviews } });
+    await Review.deleteMany({ _id: { $in: listing.reviews } });
   }
 });
 
